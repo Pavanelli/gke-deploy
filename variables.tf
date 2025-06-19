@@ -1,3 +1,14 @@
-variable "project_id" {default = "primal-outrider-456700-m9"}
-variable "region" { default = "us-central1" }
-variable "cluster_name" { default = "gke-demo-cluster" }
+variable "project_id" {
+  type    = string
+  default = "primal-outrider-456700-m9"
+}
+
+variable "region" {
+  type    = string
+  default = "us-central1"
+}
+
+variable "cluster_name" {
+  type    = string
+  default = "gke-autopilot-cluster"
+}
