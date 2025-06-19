@@ -1,0 +1,16 @@
+steps:
+  - name: "hashicorp/terraform:light"
+    entrypoint: "sh"
+    args:
+      - "-c"
+      - |
+        terraform init
+        terraform validate
+        terraform plan -out=tfplan
+        terraform apply -auto-approve tfplan
+    dir: "."
+
+substitutions:
+  _TF_PROJECT_ID: "primal-outrider-456700-m"
+
+timeout: 1200s
