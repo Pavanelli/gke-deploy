@@ -20,6 +20,8 @@ resource "google_container_node_pool" "primary_nodes" {
 
   node_config {
     machine_type = "e2-medium"
+    disk_size_gb = 50        # ou até 20 para teste
+    disk_type    = "pd-standard"  # ou "pd-balanced", evita usar "pd-ssd"
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform",
     ]
