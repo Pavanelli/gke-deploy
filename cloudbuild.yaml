@@ -10,6 +10,9 @@ steps:
         terraform apply -auto-approve tfplan
     dir: "."
 
+options:
+  logging: CLOUD_LOGGING_ONLY
+
 substitutions:
   _TF_PROJECT_ID: "primal-outrider-456700-m"
 
