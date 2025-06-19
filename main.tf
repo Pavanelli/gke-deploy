@@ -13,9 +13,9 @@ resource "google_container_cluster" "primary" {
 }
 
 resource "google_container_node_pool" "primary_nodes" {
-  name       = "node-pool"
-  cluster    = google_container_cluster.primary.name
-  location   = var.region
+  name     = "node-pool"
+  location = var.region
+  cluster  = google_container_cluster.primary.name
 
   node_config {
     machine_type = "e2-medium"
